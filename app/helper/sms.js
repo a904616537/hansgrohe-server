@@ -10,9 +10,20 @@ var moment = require('moment'),
 
 var sms_timeout = new Map();
 
+function Trim(str, is_global){
+  var result;
+  result = str.replace(/(^\s+)|(\s+$)/g,"");
+    if(is_global.toLowerCase()=="g") {
+      result = result.replace(/\s/g,"");
+    }
+  return result;
+}
+
 function querySMS(phone, callback) {
 
   var bo = true;
+  phone = Trim(phone, "g")
+  console.log('mobile', phone)
   var sms = sms_timeout.get(phone);
   if(typeof(sms) === 'undefined') {
     callback(true);
