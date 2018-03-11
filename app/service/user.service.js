@@ -38,6 +38,10 @@ module.exports = {
 			})
 		})
 	},
+	getUserForOpenId(openid, callback) {
+		user_mongo.findOne({openid})
+		.exec((err, user) => callback(user))
+	},
 
 	UpdateImage(demo) {
 		return new Promise((resolve, reject) => {
