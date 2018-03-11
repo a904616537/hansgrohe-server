@@ -2,7 +2,7 @@ const path = require('path'),
 fs         = require('fs'),
 rootPath   = path.normalize(__dirname + '/..'),
 env        = process.env.NODE_ENV || 'development',
-port       = 8130
+port       = 8230
 
 console.log('当前环境', env)
 
