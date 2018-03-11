@@ -46,7 +46,7 @@ router.route(setting.oauth)
 	.catch(err => {
 		console.error(err)
 		// res.redirect('/')
-		res.send({code, status : false})
+		res.status(500).send({code, status : false})
 	})
 })
 
