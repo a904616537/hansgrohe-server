@@ -61,7 +61,7 @@ router.route('/wechat/menu/set')
 		},{
 			"type" : "view",
 			"name" : "Registered",
-			"url"  : "https://open.weixin.qq.com/connect/oauth2/authorize?appid="+setting.appid+"&redirect_uri=http%3A%2F%2F"+setting.local+":8111&response_type=code&scope=snsapi_userinfo&state=123#wechat_redirect"
+			"url"  : "http://"+setting.local+":8111"
 		}]
 	}
 	service.createMenu(menu, result => {
