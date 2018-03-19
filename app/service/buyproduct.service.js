@@ -7,6 +7,7 @@
 const config = require('../../setting/config'),
 mongoose     = require('mongoose'),
 moment       = require('moment'),
+excel_help   = require('../helper/excel.help.js'),
 _mongo       = mongoose.model('buyproduct');
 
 module.exports = {
@@ -64,6 +65,43 @@ module.exports = {
 					})
 				}
 			})
+		})
+	},
+	toExcel(callback) {
+		_mongo.find({})
+		.sort({CreateTime : -1})
+		.exec((err, buyproducts) => {
+			var cols = [
+			{caption: 'Date', type:'string', width:500},
+			{caption: 'WeChat order no.', type:'string', width:500},
+			{caption: 'Name (sold to party)', type:'string', width:500},
+			{caption: 'Street + house number (sold to party)', type:'string', width:500},
+			{caption: 'City (sold to party)', type:'string', width:500},
+			{caption: 'Name (ship to party)', type:'string', width:200},
+			{caption: 'Phone (ship to party)', type:'string', width:200},
+			{caption: 'Product', type:'string', width:200},
+			{caption: 'Quantity', type:'string', width:100},
+			{caption: 'Serial no. (QR code)', type:'string', width:100}
+			];
+			const excels = buyproducts.map((buyproduct) => {
+				let item = [
+					moment(buyproduct.CreateTime).format('YYYY-MM-DD hh:mm:ss'),
+					buyproduct._id,
+					buyproduct.phone,
+					buyproduct.person.address,
+					buyproduct.person.city,
+					buyproduct.person.name,
+					buyproduct.phone,
+					'',
+					'',
+					buyproduct.number
+				];
+				return item;
+			});
+			console.log(excels)
+			excel_help.toExcel('Replacement_order', cols, excels, (err, url) => {
+				callback(url)
+			});
 		})
 	}
 }

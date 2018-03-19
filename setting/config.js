@@ -35,7 +35,7 @@ const config = {
 			encodingAESKey : '',
 			url            : 'http://testserver.eatisco.com',
 			oauth          : '/wechat/oauth/login',
-			local : 'a72859d9.ngrok.io',
+			local          : '106.14.94.210',
 			pay : {
 				partnerKey : "<partnerkey>",
 				appId      : "<appid>",
@@ -72,7 +72,7 @@ const config = {
 			encodingAESKey : '',
 			url            : 'http://testserver.eatisco.com',
 			oauth          : '/wechat/oauth/login',
-			local : 'a72859d9.ngrok.io',
+			local : '106.14.94.210',
 			pay : {
 				partnerKey : "<partnerkey>",
 				appId      : "<appid>",
@@ -105,11 +105,11 @@ const config = {
 		wechat : {
 			appid          : 'wx8085521f68620a15',
 			appsecret      : 'a0eeddf8135a3a1ec2c1e76def2dbaac',
-			token          : 'eatis',
+			token          : 'KainTest',
 			encodingAESKey : 'eTEJgOjqVVAmEWfV0umQtvyxNgYzWvIK71YvmGdaGaJ',
 			url            : 'http://testserver.eatisco.com',
 			oauth          : '/wechat/oauth/login',
-			local : 'a72859d9.ngrok.io',
+			local          : '106.14.94.210',
 			pay : {
 				partnerKey : "0CDAABDB348EABEEF271430112364BB8",
 				appId      : "wx8085521f68620a15",

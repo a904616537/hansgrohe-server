@@ -28,7 +28,13 @@ router.route('/')
 	_service.post(body)
 	.then((doc) => res.send(doc))
 	.catch(err => res.status(500).send(err))
-	
+})
+
+router.route('/excel')
+.get((req, res, next) => {
+	_service.toExcel((result) => {
+		res.send({result});
+	});
 })
 
 module.exports = app => {

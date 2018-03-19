@@ -81,7 +81,8 @@ module.exports = (app, config) => {
 
     app.use((req, res, next) => {
         const url = req._parsedUrl.pathname;
-        if (privateUrl.find(val => val == url)) {
+        console.log('pathname', privateUrl.includes(url))
+        if (privateUrl.includes(url)) {
             const token = req.headers.token;
             console.log('token', token)
             if (token && token != 'null') {
