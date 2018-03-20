@@ -33,9 +33,7 @@ module.exports = {
 					return val.product._id == item.product && val.selected == item.selected
 				})
 				// 已经存在的商品
-				console.log('cart_item', cart_item)
-				console.log('item.number', item.number)
-				if(cart_item) cart_item.number += item.number;
+				if(cart_item > -1) cart_item.number += item.number;
 				else cart.cart_item.push(item);
 
 				cart.save(err => {
