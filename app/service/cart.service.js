@@ -52,12 +52,12 @@ module.exports = {
 				cart.cart_item.filter(val => {
 					const v = arr.includes(val._id.toString())
 					if(v) {
-						const product = val.product.item.find(p => {
-							console.log('val.selected == p._id', val.selected, p._id)
-							return val.selected == p._id
+						const product = val.product.item.find((value, index, arr) => {
+							console.log('val.selected == p._id', val.selected, value._id)
+							return val.selected == value._id
 						});
 						console.log('product', product)
-						if(product) {
+						if(typeof product != 'undefined') {
 							total += product.price * val.number;
 							const model = {
 								no     : product.product_no,
