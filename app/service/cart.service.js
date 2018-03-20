@@ -49,12 +49,13 @@ module.exports = {
 				let total = 0, items = [];
 				// 获取购物车付款项
 				// 计算价格
-				console.log('cart_item_ids', cart.cart_item.map(v => v._id.toString()));
 				cart.cart_item.filter(val => {
 					const v = arr.includes(val._id.toString())
-					console.log('v', v)
 					if(v) {
-						const product = val.product.item.find(p => val.selected.toString() == p._id.toString());
+						const product = val.product.item.find(p => {
+							console.log('val.selected == p._id', val.selected, p._id)
+							return val.selected == p._id
+						});
 						console.log('product', product)
 						if(product) {
 							total += product.price * val.number;
