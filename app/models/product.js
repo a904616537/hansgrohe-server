@@ -8,15 +8,15 @@
 const mongoose = require('mongoose'),
 Schema         = mongoose.Schema,
 Item_Schema    = new Schema({
-	name  : { type : String, default : '' },
-	img   : { type : String, default : '' },
-	price : { type : Number, default : 0, min : 0, set : v => Number(v).toFixed(2) },
-	desc  : { type : String, default : '' }
+	name    : { type : String, default : '' },
+	img     : { type : String, default : '' },
+	surface : { type : String, default : '' },		// 表层材料
+	price   : { type : Number, default : 0, min : 0, set : v => Number(v).toFixed(2) },
+	desc    : { type : String, default : '' }
 }),
 _Schema = new Schema({
 	item       : [Item_Schema],							// 商品项
 	product_no : { type : String, required : true},
-	surface    : { type : String, default : '' },		// 表层材料
 	lack       : { type : Boolean, default : false },	// 缺货
 	hide       : { type : Boolean, default : false },	// 下架
 	content    : { type : String, default : '' },		// 内容
