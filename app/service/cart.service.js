@@ -53,10 +53,15 @@ module.exports = {
 				cart.cart_item.filter(val => {
 					const v = arr.includes(val._id.toString())
 					if(v) {
-						console.log('val.product.item', val.product.item)
-						const product = val.product.item.find((value) => objectid(val.selected) == objectid(value._id));
-						console.log('product', product)
-						if(typeof product != 'undefined') {
+						
+						let product = null;
+						val.product.item.map((value) => {
+							if(val.selected.toString() == value._id.toString()) {
+								product = value;
+							}
+							return value;
+						});
+						if(product) {
 							total += product.price * val.number;
 							const model = {
 								no     : product.product_no,
