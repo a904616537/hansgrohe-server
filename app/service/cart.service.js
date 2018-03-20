@@ -55,6 +55,7 @@ module.exports = {
 					console.log('v', v)
 					if(v) {
 						const product = val.product.item.find(p => val.selected.toString() == p._id.toString());
+						console.log('product', product)
 						if(product) {
 							total += product.price * val.number;
 							const model = {
@@ -72,6 +73,7 @@ module.exports = {
 					} 
 					else return false;
 				});
+				console.log('items', items)
 				resolve({total : total.toFixed(1), items});
 			})
 		})
