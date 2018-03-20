@@ -50,7 +50,8 @@ module.exports = {
 				// 获取购物车付款项
 				// 计算价格
 				cart.cart_item.filter(val => {
-					const v = arr.find(item => item == val._id)
+					const v = arr.find(item => item.toString() == val._id.toString())
+					console.log('v', v)
 					if(typeof v == 'undefined') return false;
 					else {
 						const product = val.product.item.find(p => val.selected.toString() == p._id.toString());
