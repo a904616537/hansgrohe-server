@@ -7,6 +7,7 @@
 const config = require('../../setting/config'),
 mongoose     = require('mongoose'),
 moment       = require('moment'),
+objectid     = require('objectid')
 _mongo       = mongoose.model('cart');
 
 module.exports = {
@@ -52,10 +53,8 @@ module.exports = {
 				cart.cart_item.filter(val => {
 					const v = arr.includes(val._id.toString())
 					if(v) {
-						const product = val.product.item.find((value, index, arr) => {
-							console.log('val.selected == p._id', val.selected, value._id)
-							return val.selected == value._id
-						});
+						console.log('val.product.item', val.product.item)
+						const product = val.product.item.find((value) => objectid(val.selected) == objectid(value._id));
 						console.log('product', product)
 						if(typeof product != 'undefined') {
 							total += product.price * val.number;
