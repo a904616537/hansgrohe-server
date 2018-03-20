@@ -7,7 +7,7 @@
 const config = require('../../setting/config'),
 mongoose     = require('mongoose'),
 moment       = require('moment'),
-objectid     = require('objectid')
+objectid     = require('objectid'),
 _mongo       = mongoose.model('cart');
 
 module.exports = {
