@@ -52,9 +52,8 @@ module.exports = {
 				console.log('cart_item_ids', cart.cart_item.map(v => v._id.toString()));
 				cart.cart_item.filter(val => {
 					const v = arr.includes(val._id.toString())
-					
-					if(typeof v == 'undefined') return false;
-					else {
+					console.log('v', v)
+					if(v) {
 						const product = val.product.item.find(p => val.selected.toString() == p._id.toString());
 						if(product) {
 							total += product.price * val.number;
@@ -70,7 +69,8 @@ module.exports = {
 							items.push(model);
 						}
 						return true;
-					}
+					} 
+					else return false;
 				});
 				resolve({total : total.toFixed(1), items});
 			})
