@@ -49,11 +49,9 @@ module.exports = {
 				let total = 0, items = [];
 				// 获取购物车付款项
 				// 计算价格
+				console.log('cart_item_ids', cart.cart_item.map(v => v._id));
 				cart.cart_item.filter(val => {
-					const v = arr.find(item => {
-						console.log('item.toString() == val._id.toString()', item.toString(), val._id.toString())
-						return item.toString() == val._id.toString()
-					})
+					const v = arr.find(item => item.toString() == val._id.toString())
 					
 					if(typeof v == 'undefined') return false;
 					else {
