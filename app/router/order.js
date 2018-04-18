@@ -38,6 +38,7 @@ router.route('/')
 })
 .post((req, res, next) => {
 	const member = req.session.user;
+	console.log('order payment', req.body);
 	_service.post(member, req.body)
 	.then(result => res.send(result._id))
 	.catch(err => {

@@ -65,13 +65,14 @@ module.exports = {
 		return new Promise((resolve, reject) => {
 			// 创建订单
 			const order = new _mongo({
-				_id        : getId(),
+				_id        : data._id ? data._id : getId(),
 				order_item : data.items,
 				member     : member._id,
 				total      : data.total,
 				address    : data.address,
 				message    : data.message
 			});
+			console.log('order model', order);
 			order.save(err => {
 				if(err) reject();
 				else {

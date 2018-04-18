@@ -76,7 +76,8 @@ module.exports = (app, config) => {
         "/member/address",
         "/order",
         "/order/me",
-        "/order/count"
+        "/order/count",
+        "/payment/wechat"
     ];
 
     app.use((req, res, next) => {
