@@ -25,7 +25,7 @@ const config = {
 			sessionName : 'session'
 		},
 		yunpian : {
-			apiKey  : '20a4152a354eaea512a093e891e08639'
+			apiKey  : '336622ee05a97de6b23b5c6a5a76e3f7'
 		},
 		wechat : {
 			// Kain 的测试公众号
@@ -33,7 +33,7 @@ const config = {
 			appsecret      : 'd9353526d9ebe7093325b5d2de244af8',
 			token          : 'KainTest',
 			encodingAESKey : '',
-			url            : 'http://testserver.eatisco.com',
+			url            : 'http://filtration.hansgrohe.com.cn',
 			oauth          : '/wechat/oauth/login',
 			local          : '106.14.94.210',
 			pay : {
@@ -62,7 +62,7 @@ const config = {
 			sessionName : 'session'
 		},
 		yunpian : {
-			apiKey  : '20a4152a354eaea512a093e891e08639'
+			apiKey  : '336622ee05a97de6b23b5c6a5a76e3f7'
 		},
 		wechat : {
 			// Kain 的测试公众号
@@ -107,7 +107,7 @@ const config = {
 			appsecret      : 'a0eeddf8135a3a1ec2c1e76def2dbaac',
 			token          : 'KainTest',
 			encodingAESKey : 'eTEJgOjqVVAmEWfV0umQtvyxNgYzWvIK71YvmGdaGaJ',
-			url            : 'http://testserver.eatisco.com',
+			url            : 'http://filtration.hansgrohe.com.cn',
 			oauth          : '/wechat/oauth/login',
 			local          : '106.14.94.210',
 			pay : {
