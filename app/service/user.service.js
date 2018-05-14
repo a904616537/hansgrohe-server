@@ -138,7 +138,7 @@ module.exports = {
 	    for (var i = 0; i < 6; i++) {
 	        Num += Math.floor(Math.random() * 10);
 	    }
-	    console.log('验证码:' + Num);
+	    console.log(`验证码: ${Num}, 电话: ${phone}`);
 
 	    let str = '【汉斯格雅】您的验证码是';
 	    sms.sendSMS(str + Num, phone, (bo) => {
