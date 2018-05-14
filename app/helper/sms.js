@@ -23,7 +23,6 @@ function querySMS(phone, callback) {
 
   var bo = true;
   phone = Trim(phone, "g")
-  console.log('mobile', phone)
   var sms = sms_timeout.get(phone);
   if(typeof(sms) === 'undefined') {
     callback(true);
@@ -50,9 +49,10 @@ var smsHelp = {
   // Leverages the 云片 API to forward an SMS to the mobile number provided
   // Error messages are forward to the system administrators' WeChat accounts
   sendSMS: function(message, mobile, callback) {
+    var phone = Trim(mobile, "g")
     var post_data = {
     'apikey': config.yunpian.apiKey,
-    'mobile': Number(mobile),
+    'mobile': Number(phone),
     'text'  : message,
     };//这是需要提交的数据
     var content = qs.stringify(post_data);
