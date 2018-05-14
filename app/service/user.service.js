@@ -140,7 +140,7 @@ module.exports = {
 	    }
 	    console.log('验证码:' + Num);
 
-	    let str = '【福哇啦】您的验证码是';
+	    let str = '【汉斯格雅】您的验证码是';
 	    sms.sendSMS(str + Num, phone, (bo) => {
 	    	if(bo) callback({status : true, code : Num, phone});
 	    	else callback({status : false})

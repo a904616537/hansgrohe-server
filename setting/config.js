@@ -100,7 +100,7 @@ const config = {
 			sessionName : 'session'
 		},
 		yunpian : {
-			apiKey  : '20a4152a354eaea512a093e891e08639'
+			apiKey  : '336622ee05a97de6b23b5c6a5a76e3f7'
 		},
 		wechat : {
 			appid          : 'wx8085521f68620a15',
