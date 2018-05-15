@@ -57,11 +57,11 @@ router.route('/wechat/menu/set')
 		"button" :[{
 			"type" : "view",
 			"name" : "Hansgrohe Shop",
-			"url"  : "https://open.weixin.qq.com/connect/oauth2/authorize?appid="+setting.appid+"&redirect_uri=http%3A%2F%2F"+setting.local+":8111&response_type=code&scope=snsapi_userinfo&state=123#wechat_redirect"
+			"url"  : "https://open.weixin.qq.com/connect/oauth2/authorize?appid="+setting.appid+"&redirect_uri=http%3A%2F%2F"+setting.url+"%2Fshop%2F&response_type=code&scope=snsapi_userinfo&state=123#wechat_redirect"
 		},{
 			"type" : "view",
 			"name" : "Registered",
-			"url"  : "http://"+setting.local+":8110"
+			"url"  : "https://open.weixin.qq.com/connect/oauth2/authorize?appid="+setting.appid+"&redirect_uri=http%3A%2F%2F"+setting.url+"&response_type=code&scope=snsapi_userinfo&state=123#wechat_redirect"
 		}]
 	}
 	service.createMenu(menu, result => {
