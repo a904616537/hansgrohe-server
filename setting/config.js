@@ -29,50 +29,13 @@ const config = {
 		},
 		wechat : {
 			// Kain 的测试公众号
-			appid          : 'wx1020286e395af06c',
-			appsecret      : 'd9353526d9ebe7093325b5d2de244af8',
-			token          : 'KainTest',
-			encodingAESKey : '',
+			appid          : 'wx06c82c3cbb012752',
+			appsecret      : '0f7f047780e15e68308ed981c4f0bfed',
+			token          : 'hansgrohe',
+			encodingAESKey : 'qtsV9j2v5U5gUNLLOB9S5CEpTCrsXnoWVLvSx6umZwK',
 			url            : 'http://filtration.hansgrohe.com.cn',
 			oauth          : '/wechat/oauth/login',
-			local          : '106.14.94.210',
-			pay : {
-				partnerKey : "<partnerkey>",
-				appId      : "<appid>",
-				mchId      : "<mchid>",
-				notifyUrl  : "<notifyurl>",
-				// pfx        : fs.readFileSync(rootPath + '/setting/apiclient_cert.p12')
-			}
-		}
-	},
-	test: {
-		root         : rootPath,
-		port         : port,
-		maxOrderTime : 1080,
-		app          : {
-			name : 'robin-test',
-			local: 'http://localhost:' + port
-		},
-		mongo : 'mongodb://ec2-54-223-41-81.cn-north-1.compute.amazonaws.com.cn:27017/robin',
-		main  : {
-			languagePath : rootPath + '/language/'
-		},
-		cookie : {
-			secret      : 'robin',
-			sessionName : 'session'
-		},
-		yunpian : {
-			apiKey  : '336622ee05a97de6b23b5c6a5a76e3f7'
-		},
-		wechat : {
-			// Kain 的测试公众号
-			appid          : 'wx1020286e395af06c',
-			appsecret      : 'd9353526d9ebe7093325b5d2de244af8',
-			token          : 'KainTest',
-			encodingAESKey : '',
-			url            : 'http://testserver.eatisco.com',
-			oauth          : '/wechat/oauth/login',
-			local : '106.14.94.210',
+			local          : '47.100.162.54',
 			pay : {
 				partnerKey : "<partnerkey>",
 				appId      : "<appid>",
@@ -103,23 +66,19 @@ const config = {
 			apiKey  : '336622ee05a97de6b23b5c6a5a76e3f7'
 		},
 		wechat : {
-			appid          : 'wx8085521f68620a15',
-			appsecret      : 'a0eeddf8135a3a1ec2c1e76def2dbaac',
-			token          : 'KainTest',
-			encodingAESKey : 'eTEJgOjqVVAmEWfV0umQtvyxNgYzWvIK71YvmGdaGaJ',
+			appid          : 'wx06c82c3cbb012752',
+			appsecret      : '0f7f047780e15e68308ed981c4f0bfed',
+			token          : 'hansgrohe',
+			encodingAESKey : 'qtsV9j2v5U5gUNLLOB9S5CEpTCrsXnoWVLvSx6umZwK',
 			url            : 'http://filtration.hansgrohe.com.cn',
 			oauth          : '/wechat/oauth/login',
-			local          : '106.14.94.210',
+			local          : '47.100.162.54',
 			pay : {
 				partnerKey : "0CDAABDB348EABEEF271430112364BB8",
 				appId      : "wx8085521f68620a15",
 				mchId      : "1486224252",
 				notifyUrl  : "http://server.eatisco.com/payment/wechat/notify",
 				// pfx        : fs.readFileSync(rootPath + '/setting/apiclient_cert.p12')
-			},
-			open : {
-				appid          : 'wx9b38d409f423b921',
-				appsecret      : '72ede5fcc886ee383961175fd595569b',
 			}
 		}
 	}
