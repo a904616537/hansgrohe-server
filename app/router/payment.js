@@ -36,7 +36,7 @@ router.route('/wechat')
 		attach           : '{"商品":"Hansgrohe"}',
 		out_trade_no     : order + '_' + Math.random().toString().substr(2, 5),
 		total_fee        : parseInt(total) * 100,
-		spbill_create_ip : req.ip,
+		spbill_create_ip : ip.address(),
 		openid           : open_id,
 		trade_type       : 'JSAPI'
 	};
