@@ -40,7 +40,7 @@ const config = {
 				partnerKey : "c373ddca1b97e59f7424553d36795a62",
 				appId      : "wx06c82c3cbb012752",
 				mchId      : "1493918942",
-				notifyUrl  : "http://filtration.hansgrohe.com.cn/server/wehcat",
+				notifyUrl  : "http://filtration.hansgrohe.com.cn/payment",
 				pfx        : fs.readFileSync(rootPath + '/setting/apiclient_cert.p12')
 			}
 		}

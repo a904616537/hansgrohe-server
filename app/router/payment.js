@@ -42,6 +42,8 @@ router.route('/wechat')
 	};
 
 	payment.getBrandWCPayRequestParams(body, (err, payargs) => {
+		console.error('error', err)
+		console.log('payargs', payargs)
 		res.json(payargs);
 	});
 })
