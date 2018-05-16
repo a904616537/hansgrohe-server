@@ -32,12 +32,12 @@ router.route('/wechat')
 	const {order, total, open_id} = req.body;
 	console.log(moment(), 'wechat payment', req.body)
 	const body = {
-		openid           : open_id,
 		body             : 'Hansgrohe',
-		out_trade_no     : order + '_' + Math.random().toString().substr(2, 5),
+		attach           : '{"商品":"Hansgrohe"}',
+		out_trade_no     : order + '_' + Math.random().toString().substr(2, 5),,
 		total_fee        : parseInt(total) * 100,
-		// total_fee        : 10,
-		spbill_create_ip : '47.100.162.54',
+		spbill_create_ip : req.ip,
+		openid           : open_id,
 		trade_type       : 'JSAPI'
 	};
 	console.log('body', body)
