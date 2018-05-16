@@ -29,7 +29,6 @@ const payment = new Payment(initConfig);
 
 router.route('/wechat')
 .post((req, res) => {
-	const user = req.session.user;
 	const {order, total, open_id} = req.body;
 	console.log(moment(), 'wechat payment', req.body)
 	const body = {
@@ -41,9 +40,8 @@ router.route('/wechat')
 		spbill_create_ip : ip.address(),
 		trade_type       : 'JSAPI'
 	};
-
+	console.log('body' body)
 	payment.getBrandWCPayRequestParams(body, (err, payargs) => {
-		console.error('error', err)
 		console.log('payargs', payargs)
 		res.json(payargs);
 	});
