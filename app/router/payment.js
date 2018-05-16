@@ -34,7 +34,7 @@ router.route('/wechat')
 	const body = {
 		body             : 'Hansgrohe',
 		attach           : '{"商品":"Hansgrohe"}',
-		out_trade_no     : order + '_' + Math.random().toString().substr(2, 5),,
+		out_trade_no     : order + '_' + Math.random().toString().substr(2, 5),
 		total_fee        : parseInt(total) * 100,
 		spbill_create_ip : req.ip,
 		openid           : open_id,
