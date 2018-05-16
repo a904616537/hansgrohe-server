@@ -33,23 +33,13 @@ router.route(setting.oauth)
 				console.log(moment(), '找到登录用户信息', openid)
 
 				req.session.user = user;
-				const expires = moment().minutes(1).valueOf();
-				const token = jwt.encode({
-					iss : {user : user._id},
-					exp : expires
-				}, 'hansgrohe');
-				res.send({status: true, token, expires, user})
+				res.send(user)
 			} else {
 				console.log(moment(), '未找到登录用户信息', openid)
 				service.getUserAndInsert(openid)
 				.then(user => {
-					const expires = moment().minutes(1).valueOf();
-					const token = jwt.encode({
-						iss : {user : user._id},
-						exp : expires
-					}, 'hansgrohe');
 					console.log(moment(), '获取并新增用户', openid)
-					res.send({status: true, token, expires, user})
+					res.send(user)
 				})
 				.catch(err => res.status(500).send())
 			}
