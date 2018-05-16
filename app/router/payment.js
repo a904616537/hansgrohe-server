@@ -23,14 +23,15 @@ const initConfig = {
 	pfx        : payinfo.pfx,			//微信商户平台证书 
 };
 
+console.log('initConfig', initConfig)
+
 const payment = new Payment(initConfig);
 
 router.route('/wechat')
 .post((req, res) => {
 	const user = req.session.user;
 	const {order, total, open_id} = req.body;
-	console.log(moment(), 'user wechat payment', user)
-	console.log("openid", open_id)
+	console.log(moment(), 'wechat payment', req.body)
 	const body = {
 		openid           : open_id,
 		body             : 'Hansgrohe',
