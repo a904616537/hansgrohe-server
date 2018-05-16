@@ -37,11 +37,11 @@ const config = {
 			oauth          : '/wechat/oauth/login',
 			local          : '47.100.162.54',
 			pay : {
-				partnerKey : "<partnerkey>",
-				appId      : "<appid>",
-				mchId      : "<mchid>",
-				notifyUrl  : "<notifyurl>",
-				// pfx        : fs.readFileSync(rootPath + '/setting/apiclient_cert.p12')
+				partnerKey : "c373ddca1b97e59f7424553d36795a62",
+				appId      : "wx06c82c3cbb012752",
+				mchId      : "1493918942",
+				notifyUrl  : "http://filtration.hansgrohe.com.cn/server/wehcat",
+				pfx        : fs.readFileSync(rootPath + '/setting/apiclient_cert.p12')
 			}
 		}
 	},
