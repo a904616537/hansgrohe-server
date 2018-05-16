@@ -37,7 +37,7 @@ const config = {
 			oauth          : '/wechat/oauth/login',
 			local          : '47.100.162.54',
 			pay : {
-				partnerKey : "c373ddca1b97e59f7424553d36795a62",
+				partnerKey : "C373DDCA1B97E59F7424553D36795A62",
 				appId      : "wx06c82c3cbb012752",
 				mchId      : "1493918942",
 				notifyUrl  : "http://filtration.hansgrohe.com.cn/payment",
