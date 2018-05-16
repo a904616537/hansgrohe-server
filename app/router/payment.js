@@ -40,7 +40,7 @@ router.route('/wechat')
 		spbill_create_ip : ip.address(),
 		trade_type       : 'JSAPI'
 	};
-	console.log('body' body)
+	console.log('body', body)
 	payment.getBrandWCPayRequestParams(body, (err, payargs) => {
 		console.log('payargs', payargs)
 		res.json(payargs);
