@@ -37,7 +37,7 @@ router.route('/wechat')
 		out_trade_no     : order + '_' + Math.random().toString().substr(2, 10),
 		total_fee        : parseInt(total) * 100,
 		// total_fee        : 10,
-		spbill_create_ip : ip.address(),
+		spbill_create_ip : '47.100.162.54',
 		trade_type       : 'JSAPI'
 	};
 	console.log('body', body)
