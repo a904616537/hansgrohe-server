@@ -23,14 +23,11 @@ const initConfig = {
 	pfx        : payinfo.pfx,			//微信商户平台证书 
 };
 
-console.log('initConfig', initConfig)
-
 const payment = new Payment(initConfig);
 
 router.route('/wechat')
 .post((req, res) => {
 	const {order, total, open_id} = req.body;
-	console.log(moment(), 'wechat payment', req.body)
 	const body = {
 		body             : 'Hansgrohe',
 		attach           : '{"商品":"Hansgrohe"}',
@@ -40,6 +37,7 @@ router.route('/wechat')
 		openid           : open_id,
 		trade_type       : 'JSAPI'
 	};
+	console.log('initConfig', initConfig)
 	console.log('body', body)
 	payment.getBrandWCPayRequestParams(body, (err, payargs) => {
 		console.log('payargs', payargs)
