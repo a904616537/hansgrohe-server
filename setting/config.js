@@ -41,7 +41,7 @@ const config = {
 				appId      : "wx06c82c3cbb012752",
 				mchId      : "1493918942",
 				notifyUrl  : "http://filtration.hansgrohe.com.cn/payment",
-				pfx        : fs.readFileSync(rootPath + '/setting/apiclient_cert.p12')
+				pfx        : fs.readFileSync('./apiclient_cert.p12')
 			}
 		}
 	},
