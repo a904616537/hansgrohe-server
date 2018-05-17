@@ -41,7 +41,7 @@ const config = {
 				appId      : "wx06c82c3cbb012752",
 				mchId      : "1493918942",
 				notifyUrl  : "http://filtration.hansgrohe.com.cn/payment",
-				pfx        : fs.readFileSync('./apiclient_cert.p12')
+				pfx        : fs.readFileSync(rootPath + '/setting/apiclient_cert.p12')
 			}
 		}
 	},
@@ -74,11 +74,11 @@ const config = {
 			oauth          : '/wechat/oauth/login',
 			local          : '47.100.162.54',
 			pay : {
-				partnerKey : "0CDAABDB348EABEEF271430112364BB8",
-				appId      : "wx8085521f68620a15",
-				mchId      : "1486224252",
-				notifyUrl  : "http://server.eatisco.com/payment/wechat/notify",
-				// pfx        : fs.readFileSync(rootPath + '/setting/apiclient_cert.p12')
+				partnerKey : "C373DDCA1B97E59F7424553D36795A62",
+				appId      : "wx06c82c3cbb012752",
+				mchId      : "1493918942",
+				notifyUrl  : "http://filtration.hansgrohe.com.cn/payment",
+				pfx        : fs.readFileSync(rootPath + '/setting/apiclient_cert.p12')
 			}
 		}
 	}
