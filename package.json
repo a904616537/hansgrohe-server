@@ -39,7 +39,8 @@
     "wechat": "^2.1.0",
     "wechat-api": "^1.32.0",
     "wechat-oauth": "^1.2.1",
-    "wechat-pay": "^0.3.2"
+    "wechat-pay": "^0.3.2",
+    "weixin-pay": "^1.1.7"
   },
   "devDependencies": {},
   "scripts": {

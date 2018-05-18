@@ -22,6 +22,7 @@ buyproduct_Schema  = new Schema({
 	size       : Number,
 	water      : Number,
 	life       : Number,
+	subdealer  : String,	// 分销商code
 	changedate : { type : Date, default : Date.now},
 	CreateTime : { type : Date, default : Date.now }
 });
