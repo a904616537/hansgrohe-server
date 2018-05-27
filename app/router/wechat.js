@@ -26,6 +26,7 @@ console.log('setting.oauth', setting.oauth)
 router.route(setting.oauth)
 .get((req, res, next) => {
 	const code = req.query.code;
+	console.log('code', code)
 	service.getOpenId(code)
 	.then(openid => {
 		user_server.getUserForOpenId(openid, user => {

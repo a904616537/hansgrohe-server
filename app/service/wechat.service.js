@@ -41,7 +41,6 @@ module.exports = {
 		return new Promise((resolve, reject) => {
 			console.log('get token', code)
 			client.getAccessToken(code, (err, result) => {
-				console.log(moment(), 'result', result)
 				if(err && err != 'undefined') return reject(err);
 				resolve(result.data.openid)
 			})
