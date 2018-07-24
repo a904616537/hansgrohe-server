@@ -30,7 +30,7 @@ var wxpay = WXPay({
 
 const initConfig = {
 	partnerKey : payinfo.partnerKey,
-	appId      : payinfo.appId,
+	appid      : payinfo.appId,
 	mchId      : payinfo.mchId,
 	notifyUrl  : payinfo.notifyUrl,		//微信商户平台API密钥 
 	pfx        : payinfo.pfx,			//微信商户平台证书 
@@ -71,6 +71,7 @@ router.route('/wechat')
 	console.log('initConfig', initConfig)
 	console.log('body', payment)
 	payment.getBrandWCPayRequestParams(body, (err, payargs) => {
+		console.log('error', err)
 		console.log('payargs', payargs)
 		res.json(payargs);
 	});

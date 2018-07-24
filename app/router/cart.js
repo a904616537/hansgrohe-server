@@ -14,6 +14,7 @@ router.route('/')
 .get((req, res, next) => {
 	const member_id = req.session.user._id;
 	_service.get(member_id, cart => {
+		console.log('get cart', cart)
 		res.send(cart);
 	})
 })
@@ -22,7 +23,7 @@ router.route('/')
 	console.log('member_id', member_id)
 	_service.add(member_id, req.body)
 	.then(cart => {
-		console.error('cart', cart)
+		console.log('cart', cart)
 		res.send(cart)
 	})
 	.catch(err => {

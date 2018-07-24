@@ -40,7 +40,7 @@ const config = {
 				partnerKey : "C373DDCA1B97E59F7424553D36795A62",
 				appId      : "wx06c82c3cbb012752",
 				mchId      : "1493918942",
-				notifyUrl  : "http://filtration.hansgrohe.com.cn/payment",
+				notifyUrl  : "http://filtration.hansgrohe.com.cn/server/payment",
 				pfx        : fs.readFileSync(rootPath + '/setting/apiclient_cert.p12')
 			}
 		}
@@ -77,7 +77,7 @@ const config = {
 				partnerKey : "C373DDCA1B97E59F7424553D36795A62",
 				appId      : "wx06c82c3cbb012752",
 				mchId      : "1493918942",
-				notifyUrl  : "http://filtration.hansgrohe.com.cn/payment",
+				notifyUrl  : "http://filtration.hansgrohe.com.cn/server/payment",
 				pfx        : fs.readFileSync(rootPath + '/setting/apiclient_cert.p12')
 			}
 		}
