@@ -49,8 +49,8 @@ router.route('/wechat')
 		out_trade_no     : order + '_' + Math.random().toString().substr(2, 5),
 		total_fee        : parseInt(total) * 100,
 		spbill_create_ip : ip.address(),
-		openid           : 'o60iixCfolqTD0XqAd511lWVhWKA',
-		// openid           : open_id,
+		// openid           : 'o60iixCfolqTD0XqAd511lWVhWKA',
+		openid           : open_id,
 		trade_type       : 'JSAPI'
 	};
 
