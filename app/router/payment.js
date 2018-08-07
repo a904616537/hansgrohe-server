@@ -30,7 +30,7 @@ var wxpay = WXPay({
 
 const initConfig = {
 	partnerKey : payinfo.partnerKey,
-	appid      : payinfo.appId,
+	appId      : payinfo.appId,
 	mchId      : payinfo.mchId,
 	notifyUrl  : payinfo.notifyUrl,		//微信商户平台API密钥 
 	pfx        : payinfo.pfx,			//微信商户平台证书 
