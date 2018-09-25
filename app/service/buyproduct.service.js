@@ -72,12 +72,13 @@ module.exports = {
 			_mongo.findOne({_id})
 			.exec((err, buyproduct) => {
 				console.log('buyproduct', buyproduct)
-				console.log('error', err);
+				
 				if(!buyproduct) reject('注册信息不存在');
 				else {
 					buyproduct.remove(err => {
+						console.log('error', err);
 						if(err) return reject()
-						resolve();
+						else resolve();
 					});
 				}
 			})
