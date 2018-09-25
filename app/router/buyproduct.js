@@ -30,7 +30,7 @@ router.route('/')
 	.catch(err => res.status(500).send(err))
 })
 .delete((req, res) => {
-	const {_id} = req.query;
+	const {_id} = req.body;
 	console.log('删除记录', _id)
 
 	_service.del(_id)
