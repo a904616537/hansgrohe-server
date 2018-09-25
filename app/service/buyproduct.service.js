@@ -71,7 +71,9 @@ module.exports = {
 		return new Promise((resolve, reject) => {
 			_mongo.findOne({_id})
 			.exec((err, buyproduct) => {
-				if(buyproduct) reject('注册信息不存在');
+				console.log('buyproduct', buyproduct)
+				console.log('error', err);
+				if(!buyproduct) reject('注册信息不存在');
 				else {
 					buyproduct.remove(err => {
 						if(err) return reject()
