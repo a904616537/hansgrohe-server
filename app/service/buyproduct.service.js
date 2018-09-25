@@ -67,6 +67,20 @@ module.exports = {
 			})
 		})
 	},
+	del(_id) {
+		return new Promise((resolve, reject) => {
+			_mongo.findOne({_id})
+			.exec((err, buyproduct) => {
+				if(buyproduct) reject('注册信息不存在');
+				else {
+					buyproduct.remove(err => {
+						if(err) return reject()
+						resolve();
+					});
+				}
+			})
+		})
+	},
 	toExcel(callback) {
 		_mongo.find({})
 		.sort({CreateTime : -1})

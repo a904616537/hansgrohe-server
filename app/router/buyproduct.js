@@ -29,6 +29,14 @@ router.route('/')
 	.then((doc) => res.send(doc))
 	.catch(err => res.status(500).send(err))
 })
+.delete((req, res) => {
+	const {_id} = req.query;
+	console.log('删除记录', _id)
+
+	_service.del(_id)
+	.then((doc) => res.send('删除成功！'))
+	.catch(err => res.status(500).send(err))
+})
 
 router.route('/excel')
 .get((req, res, next) => {
