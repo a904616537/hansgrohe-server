@@ -34,6 +34,21 @@ require('./setting/express')(app, config);
 // 应用程序启动 config.mongo.db
 require('./app/service/mongodb.client');
 
+// function flatten(arr) {
+// 	let res = [];
+// 	for(let i = 0; i < arr.length; i++) {
+// 		// if(Array.isArray(arr[i])) {
+// 		// 	res = res.concat(flatten((arr[i])));
+// 		// } else 
+// 		res.push(arr[i]);
+// 	}
+// 	return res;
+// }
+
+// Array.prototype.flat = function(depth) {
+// 	return flatten(this);
+// }
+
 
 httpServer.listen(config.port, () => console.log('Express server listening on port ' + config.port))
 

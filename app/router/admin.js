@@ -52,7 +52,6 @@ router.route('/')
 
 router.route('/login')
 .post((req, res) => {
-	console.log('aaaaa')
 	const admin = {
 		username : req.body.username,
 		password : req.body.password

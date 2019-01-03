@@ -27,6 +27,12 @@ module.exports = {
 			query.exec((err, buyproduct) => callback(buyproduct, count));
 		})
 	},
+	getPhone(phone) {
+		return new Promise((resolve, reject) => {
+			_mongo.findOne({phone})
+			.exec((err, buyproduct) => resolve(buyproduct))
+		});
+	},
 	getByNumber(buy_number, callback) {
 		_mongo.findOne({number : buy_number})
 		.exec((err, buyproduct) => callback(buyproduct))
