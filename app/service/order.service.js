@@ -114,8 +114,10 @@ module.exports = {
 			{caption: 'Name (ship to party)', type:'string'},
 			{caption: 'Phone (ship to party)', type:'string'},
 			{caption: 'Product', type:'string'},
+			{caption: 'ProductID', type:'string'},
 			{caption: 'Quantity', type:'string'},
-			{caption: 'Serial no. (QR code)', type:'string'}
+			{caption: 'Serial no. (QR code)', type:'string'},
+			{caption: 'Note', type:'string'},
 			];
 			
 			let excels = [];
@@ -132,8 +134,10 @@ module.exports = {
 							order.address.recipients,
 							order.address.phone,
 							item.name,
+							item.no,
 							`${item.number}`,
-							buyproduct.number
+							buyproduct.number,
+							order.message,
 						];
 						excels.push(row)
 						return row;
