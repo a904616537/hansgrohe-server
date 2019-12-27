@@ -17,15 +17,13 @@
     "express-http-proxy": "^0.10.1",
     "express-session": "^1.14.2",
     "glob": "^7.1.1",
-    "gulp": "^3.9.1",
-    "gulp-nodemon": "^2.2.1",
     "ip": "^1.1.5",
-    "jwt-simple": "^0.5.1",
+    "jwt-simple": "^0.5.6",
     "method-override": "^2.3.7",
     "moment": "^2.17.1",
     "moment-timezone": "^0.5.14",
     "mongoose": "^4.4.14",
-    "morgan": "^1.7.0",
+    "morgan": "^1.9.1",
     "multer": "^1.1.0",
     "node-schedule": "^1.2.3",
     "objectid": "^3.2.1",
@@ -36,14 +34,20 @@
     "serve-favicon": "^2.3.2",
     "shortid": "^2.2.8",
     "socket.io": "^1.7.3",
+    "tunnel-ssh": "^4.1.4",
     "wechat": "^2.1.0",
     "wechat-api": "^1.32.0",
-    "wechat-oauth": "^1.2.1",
+    "wechat-oauth": "^1.5.0",
     "wechat-pay": "^0.3.2",
     "weixin-pay": "^1.1.7"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-nodemon": "^2.4.2"
+  },
   "scripts": {
+    "dev": "gulp",
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

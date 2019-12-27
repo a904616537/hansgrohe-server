@@ -24,6 +24,8 @@ buyproduct_Schema  = new Schema({
 	life       : Number,
 	subdealer  : String,	// 分销商code
 	changedate : { type : Date, default : Date.now},
+	city       : { type : Schema.Types.ObjectId, ref : 'store' },	// 购买的城市
+	shop       : { type : Schema.Types.ObjectId },	// 购买的门店
 	CreateTime : { type : Date, default : Date.now }
 });
 

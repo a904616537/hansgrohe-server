@@ -27,16 +27,38 @@ router.route('/')
 
 	_service.post(body)
 	.then((doc) => res.send(doc))
-	.catch(err => res.status(500).send(err))
+	.catch(err => {
+		console.error(err);
+		res.status(500).send(err)
+	})
 })
 .delete((req, res) => {
 	const {_id} = req.body;
-	console.log('删除记录', _id)
 
 	_service.del(_id)
 	.then((doc) => res.send('删除成功！'))
 	.catch(err => res.status(500).send(err))
 })
+
+router.get('/number', (req, res) => {
+	const {number} = req.query;
+	_service.getByNumber(number)
+	.then(buyproduct => {
+		if(buyproduct) res.send({buyproduct});
+		else res.send().status(500);
+	})
+	.catch(err => res.send().status(500));
+})
+
+router.get('/validation', (req, res, next) => {
+	const {phone} = req.query;
+	_service.getValidation(phone)
+	.then(count => res.send({count}))
+	.catch(err => {
+		console.log('error', err);
+		res.send({count : 0})
+	})
+});
 
 router.route('/excel')
 .get((req, res, next) => {

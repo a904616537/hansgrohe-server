@@ -60,15 +60,15 @@ module.exports = {
 		return new Promise((resolve, reject) => {
 			_mongo.findOne({phone})
 			.exec((err, member) => {
-				if(member) {
-					resolve(member);
-				} else {
-					member  = new _mongo({phone});
-					member.save(err => {
-						if(err) return reject({err})
-						resolve(member);
-					})
-				}
+				if(member) resolve(member);
+				else reject();
+
+					// member  = new _mongo({phone});
+					// member.save(err => {
+					// 	if(err) return reject({err})
+					// 	resolve(member);
+					// })
+				
 			})
 		})
 	},

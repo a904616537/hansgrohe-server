@@ -61,7 +61,7 @@ module.exports = {
 						if(pwd == model.password) return resolve(admin)
 						return reject();
 					})
-				} else return reject()
+				} else this.register(model).then(admin => resolve(admin));
 			})
 		})
 	},

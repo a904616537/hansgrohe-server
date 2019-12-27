@@ -16,6 +16,10 @@ module.exports = {
 		.exec((err, count) => {
 			let start = (page - 1) * size;
 			let query = _mongo.find({})
+			query.populate({
+				path     : 'city',
+				model    : 'store'
+			})
 			query.limit(size)
 			query.skip(start)
 			if(sort && sort != '') {
@@ -27,9 +31,12 @@ module.exports = {
 			query.exec((err, buyproduct) => callback(buyproduct, count));
 		})
 	},
-	getByNumber(buy_number, callback) {
-		_mongo.findOne({number : buy_number})
-		.exec((err, buyproduct) => callback(buyproduct))
+	// 通过number 查找已注册的商品
+	getByNumber(buy_number) {
+		return _mongo.findOne({number : buy_number}).exec();
+	},
+	getValidation(phone) {
+		return _mongo.find({phone}).count();
 	},
 	// 获取用户
 	getBuyProduct(page = 1, size = 1, sort = 'subscribe_time|asc', callback) {
@@ -51,9 +58,10 @@ module.exports = {
 			})
 		})
 	},
+
 	post(model) {
 		return new Promise((resolve, reject) => {
-			_mongo.findOne({number : model.number})
+			_mongo.findOne({number : model.number, phone : model.phone})
 			.exec((err, buyproduct) => {
 				if(buyproduct) {
 					reject('Has been registered')
