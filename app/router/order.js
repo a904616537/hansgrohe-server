@@ -61,6 +61,13 @@ router.route('/count')
 	})
 })
 
+router.route('/excel')
+.get((req, res, next) => {
+	_service.toExcel((result) => {
+		res.send({result});
+	});
+})
+
 
 
 module.exports = app => {

@@ -64,7 +64,7 @@ module.exports = {
 						if(product) {
 							total += product.price * val.number;
 							const model = {
-								no     : product.product_no,
+								no     : val.product.product_no,
 								_id    : product._id,
 								name   : product.name,
 								img    : product.img,

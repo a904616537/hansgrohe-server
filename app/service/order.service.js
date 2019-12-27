@@ -7,7 +7,10 @@
 const config = require('../../setting/config'),
 mongoose     = require('mongoose'),
 moment       = require('moment'),
+async        = require("async"),
 _mongo       = mongoose.model('order'),
+_server      = require('./buyproduct.service'),
+excel_help   = require('../helper/excel.help.js'),
 cart_service = require('./cart.service');
 
 const getId = () => {
@@ -96,6 +99,58 @@ module.exports = {
 				})
 			});
 		});
+	},
+	toExcel(callback) {
+		_mongo.find({})
+		.populate('member')
+		.sort({CreateTime : -1})
+		.exec((err, orders) => {
+			var cols = [
+			{caption: 'Date', type:'string'},
+			{caption: 'WeChat order no.', type:'string'},
+			{caption: 'Name (sold to party)', type:'string'},
+			{caption: 'Street + house number (sold to party)', type:'string'},
+			{caption: 'City(sold to party)', type:'string'},
+			{caption: 'Name (ship to party)', type:'string'},
+			{caption: 'Phone (ship to party)', type:'string'},
+			{caption: 'Product', type:'string'},
+			{caption: 'ProductID', type:'string'},
+			{caption: 'Quantity', type:'string'},
+			{caption: 'Serial no. (QR code)', type:'string'},
+			{caption: 'Note', type:'string'},
+			];
+			
+			let excels = [];
+			async.each(orders, function(order, cb) {
+				_server.getPhone(order.member.phone).then(buyproduct => {
+					const result = order.order_item.map((item, index) => {
+						
+						let row = [
+							moment(order.CreateTime).format('YYYY-MM-DD hh:mm:ss'),
+							order._id,
+							buyproduct.person.name,
+							order.address.address,
+							buyproduct.person.city,
+							order.address.recipients,
+							order.address.phone,
+							item.name,
+							item.no,
+							`${item.number}`,
+							buyproduct.number,
+							order.message,
+						];
+						excels.push(row)
+						return row;
+					})
+					cb();
+				});
+			}, function (err){
+				// console.log('excels--------', excels)
+				excel_help.toExcel('Replacement_order', cols, excels, (err, url) => {
+					callback(url)
+				});
+			})
+		})
 	}
 }
 

@@ -31,12 +31,15 @@ module.exports = {
 			query.exec((err, buyproduct) => callback(buyproduct, count));
 		})
 	},
-	// 通过number 查找已注册的商品
-	getByNumber(buy_number) {
-		return _mongo.findOne({number : buy_number}).exec();
+	getPhone(phone) {
+		return new Promise((resolve, reject) => {
+			_mongo.findOne({phone})
+			.exec((err, buyproduct) => resolve(buyproduct))
+		});
 	},
-	getValidation(phone) {
-		return _mongo.find({phone}).count();
+	getByNumber(buy_number, callback) {
+		_mongo.findOne({number : buy_number})
+		.exec((err, buyproduct) => callback(buyproduct))
 	},
 	// 获取用户
 	getBuyProduct(page = 1, size = 1, sort = 'subscribe_time|asc', callback) {
